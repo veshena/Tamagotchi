@@ -36,10 +36,12 @@ const game = {
 // Change the inner text using ${}
     newName.innerText = (`Name: ${this.sheenName}`)
 },
+// In here i want to set the name saving it to the variable 
     startGame() {
     this.setName()
+    this.sheen = new Sheen(this.sheenName)
+    console.log(this.sheenName)
     }
-
 }
 
 // Add event listener to my start button
