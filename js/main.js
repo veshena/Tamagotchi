@@ -23,9 +23,9 @@ class Sheen {
 
 // Select buttons using document.querySelector to select the buttons I need to function
 const startButton = document.querySelector("#start")
-console.log(startButton)
+// console.log(startButton)
 const restartButton = document.querySelector("#restart")
-console.log(restartButton)
+// console.log(restartButton)
 const feedButton = document.querySelector("#feed")
 const playButton = document.querySelector("#play")
 const sleepButton = document.querySelector("#sleep")
@@ -60,21 +60,34 @@ const game = {
 
 // Add event listener to my start button
 startButton.addEventListener("click", (event) => {
+// console.log('click')
     game.startGame()
 })
+
 // Add event listener to my restart button
 restartButton.addEventListener("click", (event) => {
-    game.restartButton()
+//    console.log("click click")
 })
+
 // Add event listener to my feed button
 feedButton.addEventListener("click", (event) => {
-    game.feedButton()
+// console.log("click click")
+    game.sheen.feedMe()
+    document.getElementById("walkin-pic").src="./images/eatin.gif"
+    console.log(game.sheen)
 })
+
 // Add event listener to my play buton
 playButton.addEventListener("click", (event) => {
-    game.playButton()
+// console.log("click click")
+    game.sheen.yayPlay()
+    document.getElementById("walkin-pic").src="./images/playin.gif"
+    console.log(game.sheen)
 })
+
 // Add event listener to my sleep button
-sleepButton.addEventListener("click", (event) =>{
-    game.sleepButton()
+sleepButton.addEventListener("click", (event) => {
+    game.sheen.sleepyTime()
+    document.getElementById("walkin-pic").src="./images/sleepy.gif" 
+    console.log(game.sheen)
 })
