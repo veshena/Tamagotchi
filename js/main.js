@@ -9,6 +9,16 @@ class Sheen {
         this.boredom = 1
         this.age = 1
     }
+// Getting the buttons to work so when i click it the specific events should go down. Make 3 mehtods feedme, sleepytime amd yayplay  and if they cross 10 the pet should die.
+    feedMe() {
+        this.hunger = this.hunger - 2
+    }
+    sleepyTime() {
+        this.sleepiness = this.sleepiness - 1
+    }
+    yayPlay() {
+        this.boredom = this.boredom - 2
+    }
 }
 
 // Select buttons using document.querySelector to select the buttons I need to function
@@ -43,6 +53,10 @@ const game = {
     console.log(this.sheenName)
     }
 }
+
+
+
+
 
 // Add event listener to my start button
 startButton.addEventListener("click", (event) => {
