@@ -30,13 +30,34 @@ const game = {
 // Im using prompt by making 2 methods. One to set the name and one to start the game. In set name that's where I'll be asking the user name, create the game and update the name to display whatever the user puts
     setName() {
     this.sheenName = prompt("WASSUPPPPPPP!!!", "Add Your Name")
+// 
+    const 
+
+
     },
     startGame() {
     this.setName()
     }
+
 }
 
-// Add event listener for my game
-    startButton.addEventListener("click", (event) => {
-        game.startGame()
+// Add event listener to my start button
+startButton.addEventListener("click", (event) => {
+    game.startGame()
+})
+// Add event listener to my restart button
+restartButton.addEventListener("click", (event) => {
+    game.restartButton()
+})
+// Add event listener to my feed button
+feedButton.addEventListener("click", (event) => {
+    game.feedButton()
+})
+// Add event listener to my play buton
+playButton.addEventListener("click", (event) => {
+    game.playButton()
+})
+// Add event listener to my sleep button
+sleepButton.addEventListener("click", (event) =>{
+    game.sleepButton()
 })
