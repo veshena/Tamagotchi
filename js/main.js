@@ -33,7 +33,8 @@ const game = {
 // Use document.querySelector to selectthe div in order to input name
     const newName = document.querySelector("#cub-name p")
     console.log(newName)
-// Change the inner text
+// Change the inner text using ${}
+    newName.innerText = (`Name: ${this.sheenName}`)
 },
     startGame() {
     this.setName()
