@@ -30,11 +30,11 @@ const game = {
 // Im using prompt by making 2 methods. One to set the name and one to start the game. In set name that's where I'll be asking the user name, create the game and update the name to display whatever the user puts
     setName() {
     this.sheenName = prompt("WASSUPPPPPPP!!!", "Add Your Name")
-// 
-    const 
-
-
-    },
+// Use document.querySelector to selectthe div in order to input name
+    const newName = document.querySelector("#cub-name p")
+    console.log(newName)
+// Change the inner text
+},
     startGame() {
     this.setName()
     }
