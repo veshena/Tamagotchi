@@ -116,11 +116,26 @@ playDisplay.innerText = (`Play: ${this.sheen.boredom}`)
 },
 
 
-
-
+// To end the game im seeting it where any on my metrics become greater than 10 the game should end. And i set the age to 50 First i use a if statement
 gameOver() {
     const intervalID = setInterval(() => {
         console.log("game over")
+        if (this.sheen.hunger >= 10) {
+            document.getElementById("walkin-pic").src = "./images/oh-no.gif"
+            clearInterval(intervalID)
+        }
+        else if (this.sheen.sleepiness >= 10) {
+            document.getElementById("walkin-pic").src = "./images/oh-no.gif"
+            clearInterval(intervalID)
+        } 
+        else if (this.sheen.age >= 50) {
+            document.getElementById("walkin-pic").src = "./images/oh-no.gif"
+            clearInterval(intervalID)
+        }
+        else if (this.sheen.boredom >= 10) {
+            document.getElementById("walkin-pic").src = "./images/oh-no.gif"
+            clearInterval(intervalID)
+        } 
     }, 1000)
 }
 }
@@ -135,6 +150,7 @@ startButton.addEventListener("click", (event) => {
 // Add event listener to my restart button
 restartButton.addEventListener("click", (event) => {
     //    console.log("click click")
+    game.restartGame()
 })
 
 // Add event listener to my feed button
@@ -160,3 +176,5 @@ sleepButton.addEventListener("click", (event) => {
     document.getElementById("walkin-pic").src = "./images/sleepy.gif"
     console.log(game.sheen)
 })
+
+// Restart game
