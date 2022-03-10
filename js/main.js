@@ -11,13 +11,25 @@ class Sheen {
     }
     // Getting the buttons to work so when i click it the specific events should go down. Make 3 mehtods feedme, sleepytime amd yayplay  and if they cross 10 the pet should die.
     feedMe() {
-        this.hunger = this.hunger - 2
+        this.hunger = this.hunger - 3
     }
     sleepyTime() {
-        this.sleepiness = this.sleepiness - 1
+        this.sleepiness = this.sleepiness - 4
     }
     yayPlay() {
         this.boredom = this.boredom - 2
+    }
+    play() {
+        this.boredom += 2
+    }
+    hungry() {
+        this.hunger += 3
+    }
+    sleep() {
+        this.sleepiness += 4
+    }
+    grow() {
+        this.age += 1
     }
 }
 
@@ -29,6 +41,13 @@ const restartButton = document.querySelector("#restart")
 const feedButton = document.querySelector("#feed")
 const playButton = document.querySelector("#play")
 const sleepButton = document.querySelector("#sleep")
+
+// Getting the tags to get the display to work
+const feedDisplay = document.querySelector(`#hunger`)
+const playDisplay = document.querySelector(`#boredom`)
+const sleepDisplay = document.querySelector(`#sleepiness`)
+const ageDisplay = document.querySelector(`#age`)
+
 
 // Time to set up the game by making a game object and call it game, use strings so it remains empty that way for every game they must be able to insert a name.
 const game = {
@@ -54,8 +73,8 @@ const game = {
         // set timers
         this.gameOver()
         this.sheenAging()
-        this.sheenBored
-        this.sheenPlay
+        this.sheenSleepy()
+        this.sheenPlay()
         this.sheenHungry()
     },
     
@@ -65,25 +84,39 @@ const game = {
 sheenAging() {
     const intervalID = setInterval(() => {
     console.log("I'm getting old")
-    }, 3000)},
+    this.sheen.grow()
+    }, 2000)},
+
+sheenSleepy(){
+    const intervalID = setInterval(() => {
+        console.log("I'm Hungry")
+        this.sheen.sleep()
+    }, 4000)
+},
     
 sheenHungry() {
     const intervalID = setInterval(() => {
         console.log("I'm Hungry")
+        this.sheen.hungry()
+        this.updateDisplay()
     }, 3000)
-},
-    
-sheenBored() {
-    const intervalID = setInterval(() => {
-        console.log("I'm Bored")
-    }, 2000)
 },
     
 sheenPlay() {
     const intervalID = setInterval(() => {
         console.log("I wanna play")
+        this.sheen.play()
     }, 4000)
 },
+updateDisplay() {
+feedDisplay.innerText = (`Hungry: ${this.sheen.hunger}`)
+sleepDisplay.innerText = (`Sleepy: ${this.sheen.sleepiness}`)
+ageDisplay.innerText = (`Age: ${this.sheen.age}`)
+playDisplay.innerText = (`Play: ${this.sheen.boredom}`)
+},
+
+
+
 
 gameOver() {
     const intervalID = setInterval(() => {
