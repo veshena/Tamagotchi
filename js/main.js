@@ -133,7 +133,7 @@ gameOver() {
             clearInterval(intervalID)
         }
         else if (this.sheen.boredom >= 10) {
-            document.getElementById("walkin-pic").src = "./images/oh-no.gif"
+            document.getElementById("walkin-pic").src = "./images/oh-no.gif width ="
             clearInterval(intervalID)
         } 
     }, 1000)
@@ -157,7 +157,7 @@ restartButton.addEventListener("click", (event) => {
 feedButton.addEventListener("click", (event) => {
     // console.log("click click")
     game.sheen.feedMe()
-    document.getElementById("walkin-pic").src = "./images/eatin.gif"
+    document.getElementById("walkin-pic").src = "./images/eating.gif"
     console.log(game.sheen)
 })
 
