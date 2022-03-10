@@ -1,6 +1,7 @@
 ## Description
 Im going to be making a game called Vee Tamagotchi. The point of the game is to keep your pet happy. 
 You have to feed, play and allow your et to sleep, if the number crosses 10 you when. When you pet turns 50 years old that would be the end of the game.
+To play my game, you can visit https://veshena.github.io/Tamagotchi/
 
 
 ## User Story
