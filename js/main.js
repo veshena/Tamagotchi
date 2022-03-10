@@ -130,6 +130,7 @@ gameOver() {
         } 
         else if (this.sheen.age >= 50) {
             document.getElementById("walkin-pic").src = "./images/oh-no.gif"
+            alert(`${this.sheen.name} lived a very happy life 😇 ...`)
             clearInterval(intervalID)
         }
         else if (this.sheen.boredom >= 10) {
