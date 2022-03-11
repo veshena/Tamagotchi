@@ -208,20 +208,20 @@ sleepButton.addEventListener("click", (event) => {
 
 // Restart
 function restartGame() {
-    if (this.sheen.hunger >= 10) {
-// this leaves the function if sheen is at least 10.
-    return;
-
-// this message displays only if sheen is less than 10.
-    alert("I'm Straving");
-    }
-    else if (this.sheen.sleepiness >= 10) {
-    return;
-    alert("I'm Sleepy");
-    }
-    else if (this.sheen.boredom >= 10) {
-    return;
-    alert("I'm Bored");
-    }
+    hunger = 1
+    sleepiness = 1
+    boredom = 1
+    hunger.innerText = "Hunger: " + hunger;
+    sleepiness.innerText = "Hunger: " + sleepiness;
+    boredom.innerText = "Hunger: " + boredom;
+    restartGame() 
 }
-restartGame()
+// restartGame() {
+//     this.hunger = 1
+//     this.sleepiness = 1
+//     this.boredom = 1
+//     this.hunger.innerText = "Hunger: " + hunger;
+//     this.sleepiness.innerText = "Hunger: " + sleepiness;
+//     this.boredom.innerText = "Hunger: " + boredom;
+//     restartGame() 
+// }
